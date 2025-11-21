@@ -169,9 +169,6 @@ public:
 private:
     inline bool InitializeImpl()
     {
-        if (m_IsInitialized) {
-            return;
-        }
         m_IsInitialized = true;
         return m_IsInitialized;
     }
