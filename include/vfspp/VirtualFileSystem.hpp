@@ -111,7 +111,7 @@ public:
 
         auto it = m_FileSystems.find(alias);
         if (it != m_FileSystems.end()) {
-            it->second.remove(filesystem);
+            it->second.erase(std::remove(it->second.begin(), it->second.end(), filesystem), it->second.end());
             if (it->second.empty()) {
                 m_FileSystems.erase(it);
                 m_SortedAlias.erase(std::remove(m_SortedAlias.begin(), m_SortedAlias.end(), alias), m_SortedAlias.end());
